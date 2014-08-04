@@ -1,0 +1,71 @@
+html {
+	background: url(../img/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+	background-color: transparent;
+}
+
+.navbar {
+	background: none;
+	box-shadow: none;
+	border: none;
+	position: relative;
+	z-index: 45;
+}
+
+.widget {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+.well {
+	text-align: center;
+	margin: 0 auto ;
+	align-self: center;
+	width: 300px;
+	height: 300px;
+	flex-direction: column;
+	background: rgba(0,0,0,0.15);
+	border-radius: 10px;
+	border-color: #000;
+}
+
+.cityName {
+	font-size: 1.6em;
+	line-height: 3;
+	display: inline-block;
+	padding-right: 1em;
+	display: flex;
+	justify-content: center;
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+.temp {
+	font-size: 5em;
+	display: flex;
+	justify-content: center;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	color: #fff;
+}
+
+.icon img {
+	width: 100px;
+	height: 100px;
+}
+
+.controls {
+	margin-top: 13px;
+}
