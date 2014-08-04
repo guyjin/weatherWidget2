@@ -21,10 +21,14 @@ $(function() {
 			.done(function(data) {
 				// console.log(data);
 				// console.log(data.main.temp);
-
+				
 				weather.postTemp(data.main.temp);
 				weather.changeTown();
 				weather.changeIcon(data.weather[0].icon);
+
+				$('.well span').animate({
+					opacity: 1
+				}, 300);
 
 				
 				// console.log("success");
@@ -41,16 +45,25 @@ $(function() {
 
 		listenCity: function() {
 			$('#cityList').on('change', function() {
-				var city = $('#cityList').val();
-
-				weather.getWeather(city);
+				$('.well span').animate({
+					opacity: 0
+				}, 300, function() {
+					var city = $('#cityList').val();
+					weather.getWeather(city);
+				});
+				
+				
 			})
 		},
 
 		listenFormat: function() {
 			$('input:radio[name=tempFormat]').on('change', function() {
-				var city = $('#cityList').val();
-				weather.getWeather(city);
+				$('.well span').animate({
+					opacity: 0
+				}, 1000, function() {
+					var city = $('#cityList').val();
+					weather.getWeather(city);
+				})
 			})
 		},
 
@@ -77,12 +90,12 @@ $(function() {
 		},
 		changeIcon: function(icon) {
 			// console.log(icon);
-			$('.icon img').attr('src', "http://openweathermap.org/img/w/"+icon+".png")
+			$('.icon img').attr('src', "http://openweathermap.org/img/w/"+icon+".png");
 		}
 	}
 
 	weather.listenCity();
 	weather.listenFormat();
 
-	weather.getWeather(5419384);
+	weather.getWeather(5577147);
 });
